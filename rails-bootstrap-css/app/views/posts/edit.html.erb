@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <% if notice %>
+            <div class="alert alert-info" role="alert">
+                <%= notice %>
+            </div>
+            <% end %>
+            <div class="card shadow">
+                <div class="card-header">
+                
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <%= link_to "Back to posts", posts_path, class: "btn btn-dark btn-sm" %>
+                        </div>
+                        <div class="ml-2">
+                            <h3 class="card-title mb-0">Edit post</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <%= render "form", post: @post %>
+                </div>
+                <div class="card-footer">
+                    <%= link_to "Show this post", @post, class: "btn btn-secondary btn-sm" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

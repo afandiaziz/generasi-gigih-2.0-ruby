@@ -1,0 +1,94 @@
+
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <% if notice %>
+            <div class="alert alert-info" role="alert">
+                <%= notice %>
+            </div>
+            <% end %>
+            <div class="card shadow">
+                <div class="card-header">
+                    <h3 class="card-title">Posts</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div>
+                            <%= link_to "New post", new_post_path, class: "btn btn-primary btn-sm mb-3" %>
+                        </div>
+                        <div class="ml-auto">
+                            <a type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal">
+                                Lihat Semua Penulis
+                            </a>
+                        </div>
+                    </div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead class="table-info">
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @posts.each_with_index do |post, index| %>
+                            <tr>
+                                <td width="8%">
+                                    <%= index + 1 %>
+                                </td>
+                                <td>
+                                    <%= post.name %>
+                                </td>
+                                <td>
+                                    <%= post.title %>
+                                </td>
+                                <td>
+                                    <%= post.content %>
+                                </td>
+                                <td class="text-center" width="30%">
+                                    <div class="d-flex">
+                                        <div class="mr-2">
+                                            <%= link_to "Show", post, class: "btn btn-info btn-sm" %>
+                                        </div>
+                                        <div class="mr-2">
+                                            <%= button_to 'Edit', edit_post_path(post), method: 'get', class: "btn btn-warning btn-sm" %>
+                                        </div>
+                                        <div>
+                                            <%= button_to 'Remove', post_path(post), method: 'delete', class: "btn btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-info">Semua Penulis</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <% @posts.each do |post| %>
+                        <li><%= post.name %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <% if notice %>
+            <div class="alert alert-info" role="alert">
+                <%= notice %>
+            </div>
+            <% end %>
+            <div class="card shadow">
+                <div class="card-header">
+                    <%= link_to "Back to posts", posts_path, class: "btn btn-dark btn-sm" %>
+                </div>
+                <div class="card-body">
+                    <%= render @post %>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex">
+                        <div>
+                            <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-primary btn-sm" %>
+                        </div>
+                        <div class="ml-auto">
+                            <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-danger btn-sm" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
