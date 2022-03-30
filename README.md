@@ -1,4 +1,4 @@
-![Logo](https://i.ibb.co/c15wBKD/gengigih-logo.png)
+![Logo](https://i.ibb.co/4dRz7L8/gengigih-logo-1.png)
 
 # Repository Kampus Merdeka Generasi Gigih 2.0 - Backend Engineer
 
