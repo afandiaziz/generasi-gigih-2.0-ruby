@@ -1,0 +1,28 @@
+<h1> Items </h1>
+<a href="/items/new">New Item</a>
+<br>
+<br>
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Price</b></td>
+            <td><b>Action</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @items.each do |item| %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td>
+            <a href="/items/<%= item.id %>">Show</a> 
+            &nbsp; | &nbsp;
+            <%= button_to 'Edit', edit_item_path(item), method: 'get'%>
+            &nbsp; | &nbsp;
+            <%= button_to 'Remove', item_path(item), method: 'delete', data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
