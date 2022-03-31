@@ -13,7 +13,7 @@ But this is easier said than done, especially when several developers need to up
 
 ### Ordering food in restaurant
 
-![Alt text](assets/day2/restaurant.jpg)
+![Alt text](https://i.ibb.co/9sy4Fh5/image.png)
 
 When we are in a restaurant, we look at the menu to choose the food/beverages we want to order. 
 
@@ -61,7 +61,7 @@ As long as it’s an interface which user interacted with, it is a view.
 
 
 In short:
-![Alt text](assets/day2/mvc_pattern.png)
+![Alt text](https://i.ibb.co/cxG6FgJ/image.png)
 
 ## MVC in Ruby on Rails
 Previously, we have used Ruby on Rails to create our simple restaurant apps, congratulations! 🎉
@@ -112,7 +112,7 @@ As we have learned inheritance before, we can know that class Item is inheriting
 
 ### Controller (ApplicationController)
 
-![Alt text](assets/day2/controller_flow.png)
+![Alt text](https://i.ibb.co/MGR9fSD/image.png)
 
 This is the Flow of the controller in the Rails. Notice that the `Controller` is the first entry point of logic for anything instead of the `View`.
 
@@ -210,7 +210,7 @@ Previously we are creating the model, view, and controller separately. In ruby t
 $ bundle exec rails generate scaffold Post name:string title:string content:text
 ```
 It should looks like
-![Alt Text](assets/day2/generate_scaffold.png)
+![Alt Text](https://i.ibb.co/qd09KFZ/image.png)
 
 This will create a model `Post` with three attributes, name, title, and text. It will also create the `controller`, and `views` automatically and also `implemented them`. Next we can run the db creation and migration.
 
@@ -219,11 +219,11 @@ $ bundle exec rails db:create db:migrate
 ```
 
 When you run the replit, it should looks like this:
-![Alt Text](assets/day2/index.png)
+![Alt Text](https://i.ibb.co/4MFsS1K/image.png)
 
 And if you click on the new posts and added a posts, it has been automatically implemented.
 
-![Screenshot 2022-03-29 at 03](assets/day2/index_with_value.png)
+![Screenshot 2022-03-29 at 03](https://i.ibb.co/WVfBdym/image.png)
 
 
 ## Step 2: Add bootstrap
@@ -237,7 +237,7 @@ gem 'jquery-rails'
 
 You can add this line below the sqlite gems as long as it is on the top. It should looks like
 
-![Screenshot 2022-03-29 at 03](assets/day2/bootstrap_gemfile.png)
+![Screenshot 2022-03-29 at 03](https://i.ibb.co/SPzV4cL/image.png)
 
 and then we run bundle to add the gems
 
@@ -264,9 +264,6 @@ And then when you open the `app/assets/stylesheets/application.scss` files you w
 @import "bootstrap";
 @import "**/*";
 ```
-
-It should looks like
-![Screenshot 2022-03-29 at 03](Screenshot%202022-03-29%20at%2003.18.11.png)
 
 The first line is to import bootstrap styles from the gem we just installed, the second line is SASS syntax to import every file and folders in the current folder. 
 
@@ -308,12 +305,12 @@ At the end of the file `app/views/posts/index.html.erb`, add a [bootstrap popup 
 
 It should looks like
 
-![Screenshot 2022-03-29 at 03](assets/day2/with_modal_code.png)
+![Screenshot 2022-03-29 at 03](https://i.ibb.co/Q8217Sq/image.png)
 
 Run the rails server and go to the `/post`
 it should looks like this
 
-![Alt Text](assets/day2/modal_unclickable.png)
+![Alt Text](https://i.ibb.co/ZTVYB6W/image.png)
 
 
 we can see the bootstrap style is already imported, but try to click the button, nothing happens. Next, we need to import bootstrap javascript.
@@ -351,12 +348,12 @@ Next we need to include it to our application layout by add this line at the end
 
 The lines looks like
 
-![Alt text](assets/day2/javascript_layout.png)
+![Alt text](https://i.ibb.co/ZTVYB6W/image.png)
 
 Now let’s re-run the page.
 
 We will find these errors:
-![Alt text](assets/day2/error.png)
+![Alt text](https://i.ibb.co/w41qmy5/image.png)
 
 We can fix this error by following the instruction on the error message, by adding `//= link application.js` to the `app/assets/config/manifest.js` , it will look like this
 
@@ -367,7 +364,7 @@ We can fix this error by following the instruction on the error message, by addi
 ```
 
 Now, lets re-run the page
-![Alt text](assets/day2/result.png)
+![Alt text](https://ibb.co/NS0svhg)
 
 And here we go, we have added bootstrap and javascript to our app.
 
@@ -378,7 +375,7 @@ Congratulations 🎉
 ## Add all writers name to the modal
 Print all writer name inside the modal when clicked, for example:
 
-![Screenshot 2022-03-29 at 03](Screenshot%202022-03-29%20at%2003.56.56.png)
+![Screenshot 2022-03-29 at 03](https://i.ibb.co/XydpF3d/image.png)
 
 ## Change the colour of the headings
 Use your favourite colour or any bootstrap colour for the headings
