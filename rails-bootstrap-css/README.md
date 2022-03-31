@@ -364,7 +364,7 @@ We can fix this error by following the instruction on the error message, by addi
 ```
 
 Now, lets re-run the page
-![Alt text](https://ibb.co/NS0svhg)
+![Alt text](https://i.ibb.co/C2jzcdp/image.png)
 
 And here we go, we have added bootstrap and javascript to our app.
 
