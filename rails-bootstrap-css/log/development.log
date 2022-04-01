@@ -3037,3 +3037,23 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 120ms (Views: 117.1ms | ActiveRecord: 0.3ms | Allocations: 12634)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-30 19:04:31 +0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.0ms | Allocations: 511)
+Completed 200 OK in 75ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3492)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-03-30 19:04:35 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:36:in `each_with_index'
+  Rendered posts/index.html.erb within layouts/application (Duration: 48.9ms | Allocations: 6509)
+  Rendered layout layouts/application.html.erb (Duration: 301.1ms | Allocations: 51278)
+Completed 200 OK in 314ms (Views: 306.2ms | ActiveRecord: 1.2ms | Allocations: 53099)
+
+
