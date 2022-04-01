@@ -1,0 +1,41 @@
+Started GET "/" for 127.0.0.1 at 2022-04-02 01:19:36 +0700
+  [1m[35m (14.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.9ms | Allocations: 637)
+Completed 200 OK in 178ms (Views: 78.7ms | ActiveRecord: 0.0ms | Allocations: 5028)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateChefs (20220401182038)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "chefs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220401182038"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChefLicenses (20220401182155)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "chef_licenses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "earn_date" varchar, "chef_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220401182155"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-01 18:24:07.194147"], ["updated_at", "2022-04-01 18:24:07.194147"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChef Create (0.8ms)[0m  [1m[32mINSERT INTO "chefs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Afandi Aziz"], ["created_at", "2022-04-01 18:25:16.684237"], ["updated_at", "2022-04-01 18:25:16.684237"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT "chefs".* FROM "chefs" ORDER BY "chefs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mChefLicense Load (0.2ms)[0m  [1m[34mSELECT "chef_licenses".* FROM "chef_licenses" WHERE "chef_licenses"."chef_id" = ? LIMIT ?[0m  [["chef_id", "1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT "chefs".* FROM "chefs" WHERE "chefs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChefLicense Create (0.8ms)[0m  [1m[32mINSERT INTO "chef_licenses" ("earn_date", "chef_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["earn_date", "01/01/2022"], ["chef_id", "1"], ["created_at", "2022-04-01 18:25:36.911307"], ["updated_at", "2022-04-01 18:25:36.911307"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mChef Load (0.2ms)[0m  [1m[34mSELECT "chefs".* FROM "chefs" ORDER BY "chefs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mChefLicense Load (0.2ms)[0m  [1m[34mSELECT "chef_licenses".* FROM "chef_licenses" WHERE "chef_licenses"."chef_id" = ? LIMIT ?[0m  [["chef_id", "1"], ["LIMIT", 1]]
